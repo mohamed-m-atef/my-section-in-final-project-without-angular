@@ -1,11 +1,4 @@
-@font-face {
-    font-family: 'CustomFont';
-    src: url('../fotns/PlayfairDisplaySC-Regular.ttf') format('woff2');
-  }
 
-*{
-    font-family: 'CustomFont', sans-serif;
-}
 
 body {
     background-color: #333333;
