@@ -1,0 +1,465 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../fotns/PlayfairDisplaySC-Regular.ttf') format('woff2');
+  }
+
+*{
+    font-family: 'CustomFont', sans-serif;
+}
+
+body {
+    background-color: #333333;
+    
+}
+.homediv {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.imgdiv {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.homeimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hometext {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Adjust text color for better visibility */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Semi-transparent background over the image */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.upper {
+    margin-bottom: 20px;
+}
+
+.lower {
+    text-align: center;
+}
+
+.lower h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.lower p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #153348;
+    border: 0;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #153348;
+    font-weight: 800;
+}
+
+
+.hom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.hometext {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lower {
+    position: absolute;
+    top: 300px;
+}
+
+
+.posts {
+    height: 111vh;
+    position:relative;
+}
+
+.navcolor {
+    background-color: #153348;
+}
+
+textarea {
+    resize: none;
+}
+
+
+/* Post card container styling */
+.post_card {
+    margin-top: 40px;
+    width: 40%;
+    height: auto;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    background-color: #FFA500; /* Gold-like background color */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post_card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+/* Person photo (profile picture) styling */
+.personphoto img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover; 
+    border: 2px solid #fff;
+}
+
+/* Person info section styling */
+.personinfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.personname h6 {
+    margin: 0;
+    color: #000;
+    font-size: 1.2rem;
+}
+
+.personname p {
+    margin: 0;
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 400;
+    
+}
+
+/* Post photo styling */
+.post_photo img {
+    width: 100%; 
+    height: auto;
+    border-radius: 12px; 
+    object-fit: cover; 
+    margin-top: 20px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+}
+
+/* Reaction icons section */
+.reacts {
+    border-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .post_card {
+        width: 90%; 
+    }
+    
+    .personphoto img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .personname h6 {
+        font-size: 1rem;
+    }
+
+    .post_photo img {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .post_card  {
+        margin-left: 30px;
+    }
+    .personname h6 {
+        font-size: 0.9rem; 
+    }
+
+    .personname p {
+        font-size: 0.75rem;
+    }
+}
+
+
+
+#comment {
+    display: none;
+}
+
+#floatingTextarea {
+    resize: none;
+}
+
+
+/* Container for the ad */
+.ad-container {
+    position: fixed;
+    right: 20px; 
+    bottom: 20px;
+    width: 300px; 
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.close-btn {
+    background-color: #f44336; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+    background-color: #d32f2f; 
+}
+
+.ad-container img {
+    width: 100%; 
+    border-bottom: 2px solid #ccc;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .ad-container {
+        width: 250px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .ad-container {
+        width: 90%;
+        right: 5%; 
+        bottom: 10px; 
+    }
+}
+
+
+
+
+
+
+
+
+.sidebar {
+    height: 100%; /* Full-height sidebar */
+    width: 250px; /* Width of the sidebar */
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    background-color: #333; /* Dark background color */
+    padding-top: 20px;
+    overflow-y: auto; /* Scrollable content if it gets long */
+    color: white; /* Text color */
+}
+
+.sidebar h2 {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    margin-bottom: 10px;
+}
+
+.connections-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.connections-list li {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #444;
+}
+
+.connections-list li img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Circular profile images */
+    margin-right: 10px;
+}
+
+.connections-list li span {
+    color: white;
+    font-size: 18px;
+}
+
+/* Main content styling */
+#main-content {
+    margin-left: 270px; /* Add a margin to match the sidebar width */
+    padding: 20px;
+}
+
+/* Responsive design for small screens */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    #main-content {
+        margin-left: 0;
+    }
+}
+
+#sidebar {
+    z-index: -15000;
+}
+ 
+
+.postscontent {
+    width: 100%;
+}
+
+
+.container {
+    max-width: 800px;
+}
+
+/* Post Card Styling */
+.post_card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.post_card .personinfo {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.post_card .personinfo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.post_card .personname h6 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.post_card .personname p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.post_card .post_photo img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.post_card p {
+    padding: 15px;
+    color: #555;
+}
+
+.reacts {
+    padding: 10px 15px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reacts svg {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.reacts svg:hover {
+    color: #007bff;
+}
+
+/* Comment Section Styling */
+.comment-section {
+    display: none;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.comment-section input {
+    width: 80%;
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.comment-section button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+.comment-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Form Styling */
+#postForm .form-label {
+    font-weight: bold;
+}
+
+#postForm textarea {
+    resize: none;
+}
+
+#addPostBtn {
+    font-size: 1.1rem;
+    padding: 12px;
+}
